@@ -30,4 +30,9 @@ describe('CalculatorService', () => {
     expect(result).toEqual(15);
   })
 
+  it('should handle new lines as delimiters', ()=> {
+    const result = service.add('1\n2,5');
+    expect(result).toEqual(8);
+  })
+
 });
