@@ -12,7 +12,20 @@ export class CalculatorService {
       return 0;
     }
 
+    const negativeNumbers: number[] = [];
     const numberArr = numbers.split(/,|\n/).map(num=> parseInt(num,10));
-    return numberArr.reduce((sum, current) => sum + current, 0);
+    const sumAll = numberArr.reduce((sum, current) => 
+      {
+        if(current < 0){
+          negativeNumbers.push();
+        }
+       return sum + current
+      }, 0);
+
+      if(negativeNumbers.length > 0){
+        throw new Error(`negative number not allowed ${negativeNumbers[0]}`);
+      }
+
+    return sumAll;
   }
 }
