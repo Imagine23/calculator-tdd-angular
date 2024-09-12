@@ -39,4 +39,8 @@ describe('CalculatorService', () => {
     expect(()=>service.add('1,2,-3,4')).toThrowError('negative number not allowed -3');
   });
 
+  it('should throw error if input numbers is negative and handle correctly', ()=> {
+    expect(()=>service.add('1,-2,-3,4,-5')).toThrowError('negative number not allowed -2,-3,-5');
+  });
+
 });
