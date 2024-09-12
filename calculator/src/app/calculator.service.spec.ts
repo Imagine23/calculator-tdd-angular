@@ -18,21 +18,25 @@ describe('CalculatorService', () => {
   it('should return number itself if the input is a single number', ()=> {
     const result = service.add('1');
     expect(result).toEqual(1);
-  })
+  });
 
   it('should return sum of two numbers', ()=> {
     const result = service.add('1,2');
     expect(result).toEqual(3);
-  })
+  });
 
   it('should return sum of multiple numbers', ()=> {
     const result = service.add('1,2,3,4,5');
     expect(result).toEqual(15);
-  })
+  });
 
   it('should handle new lines as delimiters', ()=> {
     const result = service.add('1\n2,5');
     expect(result).toEqual(8);
-  })
+  });
+
+  it('should throw error if input number is negative', ()=> {
+    expect(()=>service.add('1,2,-3,4')).toThrowError('negative number not allowed -3');
+  });
 
 });
