@@ -23,7 +23,12 @@ export class CalculatorService {
       }, 0);
 
       if(negativeNumbers.length > 0){
-        throw new Error(`negative number not allowed ${negativeNumbers[0]}`);
+        if(negativeNumbers.length == 1){
+          throw new Error(`negative number not allowed ${negativeNumbers[0]}`);
+        }
+
+        throw new Error(`negative numbers not allowed ${negativeNumbers.join(',')}`);
+
       }
 
     return sumAll;
