@@ -11,6 +11,8 @@ export class CalculatorService {
     if (!numbers){
       return 0;
     }
-    return parseInt(numbers, 10);
+
+    const numberArr = numbers.split(',').map(num=> parseInt(num,10));
+    return numberArr.reduce((sum, current) => sum + current, 0);
   }
 }
