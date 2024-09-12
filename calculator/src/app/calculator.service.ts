@@ -17,9 +17,9 @@ export class CalculatorService {
     const sumAll = numberArr.reduce((sum, current) => 
       {
         if(current < 0){
-          negativeNumbers.push();
+          negativeNumbers.push(current);
         }
-       return sum + current
+       return sum + current;
       }, 0);
 
       if(negativeNumbers.length > 0){
