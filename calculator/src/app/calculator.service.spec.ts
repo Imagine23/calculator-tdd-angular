@@ -19,4 +19,9 @@ describe('CalculatorService', () => {
     const result = service.add('1');
     expect(result).toEqual(1);
   })
+
+  it('should return sum of two numbers', ()=> {
+    const result = service.add('1,2');
+    expect(result).toEqual(3);
+  })
 });
