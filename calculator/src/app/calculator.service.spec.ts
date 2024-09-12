@@ -24,4 +24,10 @@ describe('CalculatorService', () => {
     const result = service.add('1,2');
     expect(result).toEqual(3);
   })
+
+  it('should return sum of multiple numbers', ()=> {
+    const result = service.add('1,2,3,4,5');
+    expect(result).toEqual(15);
+  })
+
 });
